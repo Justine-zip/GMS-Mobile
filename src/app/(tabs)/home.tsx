@@ -1,4 +1,4 @@
-import AttendanceHistory from '@/src/components/attendance_history';
+import AttendanceHistory from '@/src/components/attendance_history_chart';
 import CircleIcon from '@/src/components/circle_icon';
 import CustomHeader from "@/src/components/custom_header";
 import StatusCard from "@/src/components/status_card";
@@ -139,7 +139,7 @@ export default function Index() {
                     <Text style={[globalStyles.title, { marginTop: 4, fontSize: 16, fontWeight: '500' }]}>7 Days</Text>
                   </View>
                 </View>
-                <View style={[globalStyles.separator, { marginVertical: 10 }]}></View>
+                <View style={[globalStyles.separator]}></View>
                 <View style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}>
                   <View style={[globalStyles.roundContainer, { width: 15, height: 15, backgroundColor: '#e0e0e0' }]}></View>
                   <View>

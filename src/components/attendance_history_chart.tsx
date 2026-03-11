@@ -35,7 +35,7 @@ const data = [
 
 const TOTAL_HOURS = 24;
 
-export default function AttendanceHistory() {
+export default function AttendanceHistoryChart() {
     return (
         <View style={[globalStyles.blockContainer, styles.card, {
             width: '100%',

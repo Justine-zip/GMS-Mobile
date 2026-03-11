@@ -62,6 +62,7 @@ export const globalStyles = StyleSheet.create({
         height: 1,
         width: '100%',
         backgroundColor: '#B0B0B0',
+        marginVertical: 10,
     }
 });
 

@@ -20,6 +20,7 @@ export default function StatusIndex({ label, style }: StatusIndexProps) {
                     paddingVertical: 3,
                     backgroundColor: bgColor,
                     borderWidth: 0,
+                    height: 20
                 },
                 style,
             ]}
