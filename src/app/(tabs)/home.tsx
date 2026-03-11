@@ -10,11 +10,13 @@ export default function Index() {
     <SafeAreaView
       style={[globalStyles.container,]}
     >
+      {/* Header */}
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
         <Text style={globalStyles.title}>GymFlow</Text>
         <CircleIcon name="notifications-outline" onPress={() => console.log('#d3ffe1' + '50')} />
       </View>
 
+      {/* SearchBar */}
       <View style={[globalStyles.blockContainer, globalStyles.spacer, { flexDirection: 'row', alignItems: 'center', gap: 12, width: '100%' }]}>
         <Ionicons name='search-outline' size={20}></Ionicons>
         <TextInput
@@ -24,6 +26,7 @@ export default function Index() {
         ></TextInput>
       </View>
 
+      {/* Daily Tracker */}
       <View style={[globalStyles.blockContainer, globalStyles.spacer, { padding: 12, width: '100%', height: 150, maxHeight: 150 }]}>
         <View style={{ flexDirection: 'row', gap: 4, padding: 6, }}>
           <View style={[globalStyles.roundContainer, {
@@ -53,6 +56,7 @@ export default function Index() {
         </View>
       </View>
 
+      {/* Status Container */}
       <ScrollView
         showsHorizontalScrollIndicator={false}
         horizontal
@@ -63,6 +67,7 @@ export default function Index() {
         <StatusCard icon="calendar-clear-outline" label="Days Remaining" value="7" plugin={true} status="Active"></StatusCard>
       </ScrollView>
 
+      {/* Workout Notification */}
       <View style={[globalStyles.blockContainer, globalStyles.spacer, { width: '100%', height: 150, maxHeight: 150, backgroundColor: '#146EF5' }]}>
         <View style={{ padding: 10 }}>
           <Text style={[globalStyles.text, { fontSize: 20, color: '#fff', fontWeight: 'bold' }]}>Ready to workout?</Text>
@@ -73,6 +78,7 @@ export default function Index() {
         </View>
       </View>
 
+      {/* Subscription Notification */}
       <View style={[globalStyles.blockContainer, globalStyles.spacer, { borderColor: '#ffaa0b4f', width: '100%', height: 150, maxHeight: 120, backgroundColor: '#ffaa0b1e' }]}>
         <View style={{ padding: 10 }}>
           <View style={{ flexDirection: 'row', gap: 10 }}>
@@ -86,6 +92,7 @@ export default function Index() {
           </View>
         </View>
       </View>
+
 
       <View style={[globalStyles.spacer, {}]}><Text>YOUR STATS</Text></View>
 
