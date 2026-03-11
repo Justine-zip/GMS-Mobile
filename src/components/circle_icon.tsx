@@ -1,10 +1,11 @@
-import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { ColorValue, Text, TouchableOpacity, View } from 'react-native';
 import { globalStyles } from '../styles/globalStyles';
+import { IconRenderer } from '../utils/icon_renderer';
 
 interface CircleIconProps {
-    name?: keyof typeof Ionicons.glyphMap;
+    name?: string;
+    iconSet?: 'Ionicons' | 'Feather';
     label?: string,
     size?: number;
     backgroundcolor?: ColorValue,
@@ -15,6 +16,7 @@ interface CircleIconProps {
 
 export default function CircleIconWithLabel({
     name,
+    iconSet = 'Ionicons',
     label,
     size = 20,
     iconColor = 'black',
@@ -37,7 +39,8 @@ export default function CircleIconWithLabel({
                     },
                 ]}
             >
-                <Ionicons name={name} size={size} color={iconColor} />
+                <IconRenderer iconColor={iconColor} size={size} name={name} iconSet={iconSet} />
+
             </View>
             {label && <Text style={[globalStyles.text, { marginTop: 4, color: textColor }]}>{label}</Text>}
         </TouchableOpacity>

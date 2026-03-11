@@ -8,7 +8,7 @@ import { Image, ScrollView, Text, TextInput, View } from "react-native";
 import CircularProgress from 'react-native-circular-progress-indicator';
 import { BarChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { traffic } from '../data/gym_traffic';
+import { traffic } from '../../data/gym_traffic';
 
 
 export default function Index() {
@@ -21,7 +21,7 @@ export default function Index() {
         stickyHeaderIndices={[0]}
       >
         {/* Header */}
-        <CustomHeader header="GymFlow" icon="notifications-outline"></CustomHeader>
+        <CustomHeader header="GymFlow" icon="notifications-outline" isCircled={true}></CustomHeader>
 
         {/* SearchBar */}
         <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { flexDirection: 'row', alignItems: 'center', gap: 12, width: '100%' }]}>
