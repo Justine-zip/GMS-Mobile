@@ -68,8 +68,8 @@ export default function Index() {
           horizontal
           style={{ flexGrow: 0 }}
         >
-          <StatusCard icon="calendar-clear-outline" label="Days Remaining" value="7" plugin={true} status="Active" style={{ marginRight: 10 }}></StatusCard>
-          <StatusCard icon="calendar-clear-outline" label="Avg Duration" value="54" plugin={false} status="mins" style={{ marginRight: 10 }}></StatusCard>
+          <StatusCard iconSet="Ionicons" icon="calendar-clear-outline" label="Days Remaining" value="7" plugin={true} status="Active" style={{ marginRight: 10 }}></StatusCard>
+          <StatusCard iconSet="Entypo" icon="stopwatch" label="Avg Duration" value="54" plugin={false} status="mins" style={{ marginRight: 10 }}></StatusCard>
           <StatusCard icon="calendar-clear-outline" label="Days Remaining" value="7" plugin={true} status="Active"></StatusCard>
         </ScrollView>
 
