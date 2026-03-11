@@ -6,15 +6,15 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: '#fff',
         padding: 20
     },
-    wrapper: {
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    spacer: {
-        marginTop: 20,
-    },
-    title: {
+
+    headerTitle: {
         fontSize: 22,
+        fontWeight: 'bold',
+        color: '#000000'
+    },
+
+    title: {
+        fontSize: 20,
         fontWeight: 'bold',
         color: '#000000'
     },
@@ -24,8 +24,7 @@ export const globalStyles = StyleSheet.create({
     },
 
     blockContainer: {
-        paddingVertical: 4,
-        paddingHorizontal: 12,
+
         alignSelf: 'flex-start',
         borderWidth: .6,
         borderColor: '#B0B0B0',
@@ -45,5 +44,24 @@ export const globalStyles = StyleSheet.create({
         borderWidth: 1,
         paddingHorizontal: 10,
     },
+
+
+    wrapperCenter: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    wrapperPadding: {
+        width: '100%',
+        paddingVertical: 4,
+        paddingHorizontal: 12,
+    },
+    spacer: {
+        marginTop: 20,
+    },
+    separator: {
+        height: 1,
+        width: '100%',
+        backgroundColor: '#B0B0B0',
+    }
 });
 
