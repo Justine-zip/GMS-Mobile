@@ -1,6 +1,9 @@
 import CustomButton from "@/src/components/custom_button";
 import CustomHeader from "@/src/components/custom_header";
+import NotificationCard from "@/src/components/notification_card";
+import { notificationData } from "@/src/data/notification_data";
 import { globalStyles } from "@/src/styles/globalStyles";
+import { FlashList } from "@shopify/flash-list";
 import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -22,7 +25,21 @@ export default function Index() {
         </View>
 
         <Text>New</Text>
+        <Text>Earlier</Text>
         {/* Notification Card */}
+        <FlashList
+          data={notificationData}
+          renderItem={({ item }) => (
+            <NotificationCard
+              icon={item.icon}
+              iconColor={item.iconColor}
+              header={item.header}
+              description={item.description}
+              time={item.time}
+              isNew={item.isNew}
+            />
+          )}
+        />
 
       </ScrollView>
     </SafeAreaView>
