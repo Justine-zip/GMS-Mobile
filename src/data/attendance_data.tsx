@@ -1,0 +1,38 @@
+export const attendanceData = [
+    {
+        date: "Feb 16, 2026",
+        day: "Monday",
+        branch: "Downtown Branch",
+        timeIn: "06:30 AM",
+        timeOut: "08:15 AM",
+        duration: "105 min",
+        status: "complete",
+    },
+    {
+        date: "Feb 15, 2026",
+        day: "Sunday",
+        branch: "Eastside Branch",
+        timeIn: "08:30 AM",
+        timeOut: "10:15 AM",
+        duration: "105 min",
+        status: "complete",
+    },
+    {
+        date: "Feb 13, 2026",
+        day: "Friday",
+        branch: "WestSide Branch",
+        timeIn: "01:30 PM",
+        timeOut: "04:05 PM",
+        duration: "105 min",
+        status: "complete",
+    },
+    {
+        date: "Feb 11, 2026",
+        day: "Friday",
+        branch: "Downtown Branch",
+        timeIn: "03:30 PM",
+        timeOut: "05:25 PM",
+        duration: "105 min",
+        status: "complete",
+    },
+];
