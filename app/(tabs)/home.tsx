@@ -8,7 +8,7 @@ import { Image, ScrollView, Text, TextInput, View } from "react-native";
 import CircularProgress from 'react-native-circular-progress-indicator';
 import { BarChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { traffic } from '../../data/gym_traffic';
+import { traffic } from '../../src/data/gym_traffic';
 
 
 export default function Index() {
