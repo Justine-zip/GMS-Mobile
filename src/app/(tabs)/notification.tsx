@@ -24,11 +24,12 @@ export default function Index() {
           <CustomButton label="Unread" backgroundColor="#fff" textColor="#000" />
         </View>
 
-        <Text>New</Text>
-        <Text>Earlier</Text>
-        {/* Notification Card */}
+        <View style={[globalStyles.spacer]} />
+
+        {/* Notification List */}
+        <Text style={[globalStyles.title, { fontSize: 16 }]}>New</Text>
         <FlashList
-          data={notificationData}
+          data={notificationData.filter((item) => item.isNew)}
           renderItem={({ item }) => (
             <NotificationCard
               icon={item.icon}
@@ -39,6 +40,27 @@ export default function Index() {
               isNew={item.isNew}
             />
           )}
+          ItemSeparatorComponent={() => <View style={globalStyles.spacer} />}
+          contentContainerStyle={{ paddingVertical: 12 }}
+        />
+
+        <View style={[globalStyles.spacer]} />
+
+        <Text style={[globalStyles.title, { fontSize: 16 }]}>Earlier</Text>
+        <FlashList
+          data={notificationData.filter((item) => !item.isNew)}
+          renderItem={({ item }) => (
+            <NotificationCard
+              icon={item.icon}
+              iconColor={item.iconColor}
+              header={item.header}
+              description={item.description}
+              time={item.time}
+              isNew={item.isNew}
+            />
+          )}
+          ItemSeparatorComponent={() => <View style={globalStyles.spacer} />}
+          contentContainerStyle={{ paddingVertical: 12 }}
         />
 
       </ScrollView>
