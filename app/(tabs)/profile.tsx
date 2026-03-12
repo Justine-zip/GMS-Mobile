@@ -35,7 +35,7 @@ export default function Index() {
                 ]}
               >
                 <Image
-                  source={require('../../../assets/images/main/UserPhoto.png')}
+                  source={require('../../assets/images/main/UserPhoto.png')}
                   style={{ width: '100%', height: '100%' }}
                   resizeMode="cover"
                 />

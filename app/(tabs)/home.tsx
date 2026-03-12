@@ -43,7 +43,7 @@ export default function Index() {
               alignItems: 'center',
               marginTop: 10
             }]}>
-              <Image source={require('../../../assets/images/main/UserPhoto.png')} style={{ width: '100%', height: '100%' }}
+              <Image source={require('../../assets/images/main/UserPhoto.png')} style={{ width: '100%', height: '100%' }}
                 resizeMode="cover"></Image>
             </View>
             <View style={{ flex: 10, flexDirection: 'column', padding: 10 }}>
