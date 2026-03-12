@@ -1,8 +1,8 @@
-import { Entypo, Feather, Ionicons, Octicons } from "@expo/vector-icons";
+import { AntDesign, Entypo, Feather, Ionicons, Octicons } from "@expo/vector-icons";
 
 interface IconRenderer {
     name?: string,
-    iconSet?: 'Ionicons' | 'Feather' | 'Entypo' | 'Octicons',
+    iconSet?: 'Ionicons' | 'Feather' | 'Entypo' | 'Octicons' | 'AntDesign',
     size?: number,
     iconColor?: string
 }
@@ -13,5 +13,6 @@ export const IconRenderer = ({ name, iconSet, size, iconColor }: IconRenderer) =
     if (iconSet === 'Feather') return <Feather name={name as keyof typeof Feather.glyphMap} size={size} color={iconColor} />;
     if (iconSet === 'Entypo') return <Entypo name={name as keyof typeof Entypo.glyphMap} size={size} color={iconColor} />;
     if (iconSet === 'Octicons') return <Octicons name={name as keyof typeof Octicons.glyphMap} size={size} color={iconColor} />;
+    if (iconSet === 'AntDesign') return <AntDesign name={name as keyof typeof AntDesign.glyphMap} size={size} color={iconColor} />;
     return null;
 }

@@ -16,7 +16,7 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
         stickyHeaderIndices={[0]}>
         {/* Header */}
-        <CustomHeader header="Attendance" icon="more-horizontal" isCircled={false}></CustomHeader>
+        <CustomHeader header="Attendance" icon="more-horizontal" iconSet="Feather" isCircled={false}></CustomHeader>
         <Text>Track your progress, analyze your workout durations, and stay consistent with your fitness goals.</Text>
         {/* Status Container */}
         <ScrollView
