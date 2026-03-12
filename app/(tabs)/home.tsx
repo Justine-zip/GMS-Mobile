@@ -21,7 +21,7 @@ export default function Index() {
         stickyHeaderIndices={[0]}
       >
         {/* Header */}
-        <CustomHeader header="GymFlow" icon="notifications-outline" iconSet='Feather' isCircled={true}></CustomHeader>
+        <CustomHeader header="GymFlow" icon="notifications-outline" iconSet='Feather' isCircled={true} isHome></CustomHeader>
 
         {/* SearchBar */}
         <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { flexDirection: 'row', alignItems: 'center', gap: 12, width: '100%' }]}>
