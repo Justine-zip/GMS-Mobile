@@ -2,6 +2,8 @@ export function getColorsForStatus(label: string) {
     switch (label.toLowerCase()) {
         case 'active':
             return { bgColor: '#d3ffe1', textColor: '#00A535' }; // green
+        case 'enable':
+            return { bgColor: '#d3ffe1', textColor: '#00A535' }; // green
         case 'complete':
             return { bgColor: '#d3ffe1', textColor: '#00A535' }; // green
         case 'cancelled':
