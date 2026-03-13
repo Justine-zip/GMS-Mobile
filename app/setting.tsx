@@ -20,9 +20,9 @@ export default function Setting() {
 
           header='Account'
           items={[
-            { icon: "person-circle-outline", iconSet: "Ionicons", name: "Account" },
-            { icon: "lock-closed-outline", iconSet: "Ionicons", name: "Privacy & Security" },
-            { icon: "payment", iconSet: "MaterialIcons", name: "Payment & Billing" }
+            { icon: "person-circle-outline", iconSet: "Ionicons", name: "Account", route: 'account' },
+            { icon: "lock-closed-outline", iconSet: "Ionicons", name: "Privacy & Security", route: 'security' },
+            { icon: "payment", iconSet: "MaterialIcons", name: "Payment & Billing", route: 'payment' }
           ]}
         ></SettingCard>
 
@@ -31,8 +31,8 @@ export default function Setting() {
 
           header='General'
           items={[
-            { icon: "sunny-outline", iconSet: "Ionicons", name: "Appearance" },
-            { icon: "notifications-outline", iconSet: "Ionicons", name: "Notifications" },
+            { icon: "sunny-outline", iconSet: "Ionicons", name: "Appearance", route: 'appearance' },
+            { icon: "notifications-outline", iconSet: "Ionicons", name: "Notifications", route: 'notification' },
           ]}
         ></SettingCard>
 
@@ -41,16 +41,16 @@ export default function Setting() {
 
           header='Support'
           items={[
-            { icon: "message-square", iconSet: "Feather", name: "Contact support" },
-            { icon: "flag-outline", iconSet: "Ionicons", name: "Report a problem" },
-            { icon: "alert-circle-outline", iconSet: "Ionicons", name: "Terms & Conditions" }
+            { icon: "message-square", iconSet: "Feather", name: "Contact support", route: 'support' },
+            { icon: "flag-outline", iconSet: "Ionicons", name: "Report a problem", route: 'report' },
+            { icon: "alert-circle-outline", iconSet: "Ionicons", name: "Terms & Conditions", route: 'condition' }
           ]}
         ></SettingCard>
 
         {/* Logout */}
         <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, globalStyles.spacer, { borderWidth: 0, backgroundColor: '#FF4D4D10' }]}>
           <View style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}>
-            <Feather name='log-out' size={24} color={'#FF4D4D'} />
+            <Feather name='log-out' size={22} color={'#FF4D4D'} />
             <Text style={[globalStyles.text, { color: '#FF4D4D', fontWeight: 'bold' }]}>Log Out</Text>
           </View>
         </View>
