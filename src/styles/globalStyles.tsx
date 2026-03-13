@@ -53,7 +53,7 @@ export const globalStyles = StyleSheet.create({
     },
     wrapperPadding: {
         width: '100%',
-        paddingVertical: 4,
+        paddingVertical: 8,
         paddingHorizontal: 12,
     },
     spacer: {

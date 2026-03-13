@@ -1,6 +1,7 @@
 import CustomHeader from "@/src/components/custom_header";
 import StatusIndex from "@/src/components/status_index";
 import { globalStyles } from "@/src/styles/globalStyles";
+import { router } from "expo-router";
 import { ClipboardMinus } from "lucide-react-native";
 import { Image, ScrollView, Text, View } from "react-native";
 import * as Progress from "react-native-progress";
@@ -16,9 +17,9 @@ export default function Index() {
         stickyHeaderIndices={[0]}
       >
         {/* Header */}
-        <CustomHeader header="Profile" icon="settings" iconSet="Feather" isCircled={false}></CustomHeader>
+        <CustomHeader header="Profile" icon="settings" iconSet="Feather" isCircled={false} onPress={() => router.push('/setting')}></CustomHeader>
         {/* Profile Preview */}
-        <View style={[globalStyles.spacer, { width: '100%' }]}>
+        <View style={[{ width: '100%', }]}>
           <View style={{ flexDirection: 'row', gap: 12, alignItems: 'center' }}>
             <View style={{ position: 'relative' }}>
               <View
