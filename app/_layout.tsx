@@ -4,7 +4,7 @@ export default function RootLayout() {
   return <Stack
     screenOptions={{
       headerShown: false,
-      animation: 'slide_from_left'
+      animation: 'slide_from_right'
     }}
   />;
 }
