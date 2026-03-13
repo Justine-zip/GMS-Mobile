@@ -17,7 +17,7 @@ export default function Index() {
         stickyHeaderIndices={[0]}
       >
         {/* Header */}
-        <CustomHeader header="Notification" icon="more-horizontal" isCircled={false}></CustomHeader>
+        <CustomHeader header="Notification" icon="more-horizontal" iconSet="Feather" isCircled={false}></CustomHeader>
         {/* Notification Filter */}
         <View style={[globalStyles.spacer, { flexDirection: 'row', gap: 8 }]}>
           <CustomButton label="All" backgroundColor="#146EF5" textColor="#fff" />
