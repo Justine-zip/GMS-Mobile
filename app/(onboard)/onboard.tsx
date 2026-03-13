@@ -22,7 +22,7 @@ export default function Onboard() {
 
                 <Text style={[globalStyles.title, { color: '#fff', fontSize: 24, textAlign: 'center' },]}>Elevate Your Gym’s Peak Performance.</Text>
                 <Text style={[globalStyles.text, { color: '#fff', fontSize: 16, textAlign: 'center', marginTop: 8 },]}>Streamline your gym operations with powerful management tools built for modern fitness business.</Text>
-                <CustomButton onPress={() => router.push('/(tabs)/home')} label='Get Started' backgroundColor='#146EF5' textColor='#fff' textSize={18} style={[{ marginTop: 40, borderWidth: 0, width: 350, alignItems: 'center' }]} />
+                <CustomButton onPress={() => router.push('/(onboard)/signin')} label='Get Started' backgroundColor='#146EF5' textColor='#fff' textSize={18} style={[{ marginTop: 40, borderWidth: 0, width: 350, alignItems: 'center' }]} />
                 <Text style={[globalStyles.spacer, globalStyles.text, { color: '#B0B0B0' }]}>Join 10,000+ active members today.</Text>
             </View>
         </View>

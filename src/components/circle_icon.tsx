@@ -30,9 +30,9 @@ export default function CircleIconWithLabel({
                 style={[
                     globalStyles.roundContainer,
                     {
-                        width: size + 12,
-                        height: size + 12,
-                        borderRadius: (size + 12) / 2,
+                        width: size + 8,
+                        height: size + 8,
+                        borderRadius: (size + 8) / 2,
                         backgroundColor: backgroundcolor,
                         justifyContent: 'center',
                         alignItems: 'center',
