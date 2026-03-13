@@ -24,7 +24,7 @@ export default function Index() {
         <CustomHeader header="GymFlow" icon="notifications-outline" iconSet='Feather' isCircled={true} isHome></CustomHeader>
 
         {/* SearchBar */}
-        <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { flexDirection: 'row', alignItems: 'center', gap: 12, width: '100%' }]}>
+        <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { flexDirection: 'row', alignItems: 'center', gap: 12, width: '100%' }, { paddingVertical: 4 }]}>
           <Ionicons name='search-outline' size={20}></Ionicons>
           <TextInput
             // onChangeText={text => setInputValue(text)}
@@ -178,6 +178,8 @@ export default function Index() {
             ></BarChart>
           </View>
         </View>
+
+        <View style={globalStyles.spacer} />
 
       </ScrollView>
     </SafeAreaView>

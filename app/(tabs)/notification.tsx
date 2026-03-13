@@ -63,6 +63,9 @@ export default function Index() {
           contentContainerStyle={{ paddingVertical: 12 }}
         />
 
+        <View style={globalStyles.spacer} />
+
+
       </ScrollView>
     </SafeAreaView>
   );

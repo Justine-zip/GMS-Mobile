@@ -4,7 +4,7 @@ import StatusCard from "@/src/components/status_card";
 import { attendanceData } from "@/src/data/attendance_data";
 import { globalStyles } from "@/src/styles/globalStyles";
 import { FlashList } from "@shopify/flash-list";
-import { ScrollView, Text } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -44,6 +44,9 @@ export default function Index() {
             />
           )}
         ></FlashList>
+
+        <View style={globalStyles.spacer} />
+
       </ScrollView>
     </SafeAreaView>
   );
