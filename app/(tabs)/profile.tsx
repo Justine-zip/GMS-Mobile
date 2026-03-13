@@ -3,7 +3,7 @@ import StatusIndex from "@/src/components/status_index";
 import { globalStyles } from "@/src/styles/globalStyles";
 import { router } from "expo-router";
 import { ClipboardMinus } from "lucide-react-native";
-import { Image, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import * as Progress from "react-native-progress";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -62,9 +62,11 @@ export default function Index() {
               <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold', marginTop: 6 }]}>Emma Williams</Text>
               <Text style={[globalStyles.text]}>emma.williams@email.com</Text>
             </View>
-            <View style={[globalStyles.blockContainer, { padding: 10, alignSelf: 'center' }]}>
-              <Text>Edit Profile</Text>
-            </View>
+            <TouchableOpacity>
+              <View style={[globalStyles.blockContainer, { padding: 10, alignSelf: 'center' }]}>
+                <Text>Edit Profile</Text>
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
         {/* Subscription Notification */}
@@ -75,9 +77,11 @@ export default function Index() {
                 <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold' }]}>Your membership will expire in 7 days!</Text>
                 <Text style={[globalStyles.text, { fontSize: 14, marginTop: 4 }]}>Don't loose access to your favorite branch</Text>
               </View>
-              <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperCenter, { borderWidth: 0, flex: 3, width: 80, height: 50, maxHeight: 50, backgroundColor: '#FFA90B' }]}>
-                <Text style={[globalStyles.title, { fontSize: 16, color: '#fff' }]}>Renew Now</Text>
-              </View>
+              <TouchableOpacity style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperCenter, { borderWidth: 0, flex: 3, width: 80, height: 50, maxHeight: 50, backgroundColor: '#FFA90B' }]}>
+                <View >
+                  <Text style={[globalStyles.title, { fontSize: 16, color: '#fff' }]}>Renew Now</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -126,42 +130,46 @@ export default function Index() {
         {/* Attendance Monitoring */}
         <Text>ATTENDANCE MONITORING</Text>
         <View style={{ flexDirection: 'row', gap: 10 }}>
-          <View style={[globalStyles.spacer, { alignSelf: 'flex-start' }]}>
-            <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, { width: 170, maxWidth: 170, height: 175, position: 'relative', }]}>
-              <View style={{ backgroundColor: '#e5efff', padding: 8, borderRadius: 8, alignSelf: 'flex-start', marginTop: 8 }}>
-                <ClipboardMinus size={30} color={'#146EF5'} />
+          <TouchableOpacity>
+            <View style={[globalStyles.spacer, { alignSelf: 'flex-start' }]}>
+              <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, { width: 170, maxWidth: 170, height: 175, position: 'relative', }]}>
+                <View style={{ backgroundColor: '#e5efff', padding: 8, borderRadius: 8, alignSelf: 'flex-start', marginTop: 8 }}>
+                  <ClipboardMinus size={30} color={'#146EF5'} />
+                </View>
+                <Text style={[globalStyles.title, { fontSize: 16, marginTop: 8 }]}>View Personal History</Text>
+                <Text style={[globalStyles.text, { fontSize: 14 }]}>Track your check-ins and session duration.</Text>
               </View>
-              <Text style={[globalStyles.title, { fontSize: 16, marginTop: 8 }]}>View Personal History</Text>
-              <Text style={[globalStyles.text, { fontSize: 14 }]}>Track your check-ins and session duration.</Text>
-            </View>
-            <View
-              style={{
-                position: 'absolute',
-                top: 15,
-                right: 10,
-              }}
-            >
-              <StatusIndex label="Enable" />
-            </View>
-          </View>
-          <View style={[globalStyles.spacer, { alignSelf: 'flex-start' }]}>
-            <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, { width: 170, maxWidth: 170, height: 175, position: 'relative', }]}>
-              <View style={{ backgroundColor: '#e5efff', padding: 8, borderRadius: 8, alignSelf: 'flex-start', marginTop: 8 }}>
-                <ClipboardMinus size={30} color={'#146EF5'} />
+              <View
+                style={{
+                  position: 'absolute',
+                  top: 15,
+                  right: 10,
+                }}
+              >
+                <StatusIndex label="Enable" />
               </View>
-              <Text style={[globalStyles.title, { fontSize: 16, marginTop: 8 }]}>Workout Progress</Text>
-              <Text style={[globalStyles.text, { fontSize: 14 }]}>Record and manage your work sessions.</Text>
             </View>
-            <View
-              style={{
-                position: 'absolute',
-                top: 15,
-                right: 10,
-              }}
-            >
-              <StatusIndex label="Active" />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={[globalStyles.spacer, { alignSelf: 'flex-start' }]}>
+              <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, { width: 170, maxWidth: 170, height: 175, position: 'relative', }]}>
+                <View style={{ backgroundColor: '#e5efff', padding: 8, borderRadius: 8, alignSelf: 'flex-start', marginTop: 8 }}>
+                  <ClipboardMinus size={30} color={'#146EF5'} />
+                </View>
+                <Text style={[globalStyles.title, { fontSize: 16, marginTop: 8 }]}>Workout Progress</Text>
+                <Text style={[globalStyles.text, { fontSize: 14 }]}>Record and manage your work sessions.</Text>
+              </View>
+              <View
+                style={{
+                  position: 'absolute',
+                  top: 15,
+                  right: 10,
+                }}
+              >
+                <StatusIndex label="Active" />
+              </View>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
 

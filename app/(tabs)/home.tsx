@@ -4,7 +4,7 @@ import CustomHeader from "@/src/components/custom_header";
 import StatusCard from "@/src/components/status_card";
 import { globalStyles } from "@/src/styles/globalStyles";
 import { Ionicons } from "@expo/vector-icons";
-import { Image, ScrollView, Text, TextInput, View } from "react-native";
+import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import CircularProgress from 'react-native-circular-progress-indicator';
 import { BarChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -92,9 +92,11 @@ export default function Index() {
                 <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold' }]}>Your membership will expire in 7 days!</Text>
                 <Text style={[globalStyles.text, { fontSize: 14, marginTop: 4 }]}>Don't loose access to your favorite branch</Text>
               </View>
-              <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperCenter, { borderWidth: 0, flex: 3, width: 80, height: 50, maxHeight: 50, backgroundColor: '#FFA90B' }]}>
-                <Text style={[globalStyles.title, { fontSize: 16, color: '#fff' }]}>Renew Now</Text>
-              </View>
+              <TouchableOpacity style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperCenter, { borderWidth: 0, flex: 3, width: 80, height: 50, maxHeight: 50, backgroundColor: '#FFA90B' }]}>
+                <View>
+                  <Text style={[globalStyles.title, { fontSize: 16, color: '#fff' }]}>Renew Now</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
