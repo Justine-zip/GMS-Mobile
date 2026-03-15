@@ -1,9 +1,10 @@
 import CircleIcon from '@/src/components/circle_icon';
 import CustomButton from '@/src/components/custom_button';
+import CustomInputField from '@/src/components/custom_input_field';
 import { globalStyles } from '@/src/styles/globalStyles';
 import { router } from 'expo-router';
 import React from 'react';
-import { Image, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
+import { Image, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Signin() {
@@ -24,9 +25,7 @@ export default function Signin() {
                 <View>
                     <Text style={[{ fontSize: 14 }]}>Email</Text>
                     <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, { alignItems: 'flex-start', width: '100%' }, { paddingVertical: 4, marginTop: 8 }]}>
-                        <TextInput
-                            placeholder="gymflow@gmail.com"
-                        ></TextInput>
+                        <CustomInputField placeholder="gymflow@gmail.com" placeholderColor='#B0B0B0' />
                     </View>
                 </View>
 
@@ -35,9 +34,7 @@ export default function Signin() {
                 <View>
                     <Text style={[{ fontSize: 14 }]}>Password</Text>
                     <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, { alignItems: 'flex-start', width: '100%' }, { paddingVertical: 4, marginTop: 8 }]}>
-                        <TextInput
-                            placeholder="..."
-                        ></TextInput>
+                        <CustomInputField placeholder="*******" placeholderColor='#B0B0B0' />
                     </View>
                 </View>
 

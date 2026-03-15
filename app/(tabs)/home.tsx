@@ -1,10 +1,11 @@
 import AttendanceHistory from '@/src/components/attendance_history_chart';
 import CircleIcon from '@/src/components/circle_icon';
 import CustomHeader from "@/src/components/custom_header";
+import CustomInputField from '@/src/components/custom_input_field';
 import StatusCard from "@/src/components/status_card";
 import { globalStyles } from "@/src/styles/globalStyles";
 import { Ionicons } from "@expo/vector-icons";
-import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import CircularProgress from 'react-native-circular-progress-indicator';
 import { BarChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -26,11 +27,8 @@ export default function Index() {
         {/* SearchBar */}
         <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { flexDirection: 'row', alignItems: 'center', gap: 12, width: '100%' }, { paddingVertical: 4 }]}>
           <Ionicons name='search-outline' size={20}></Ionicons>
-          <TextInput
-            // onChangeText={text => setInputValue(text)}
-            // value={}
-            placeholder="Search Anything..."
-          ></TextInput>
+          <CustomInputField placeholder="Search anything..." placeholderColor='#B0B0B0' />
+
         </View>
 
         {/* Daily Tracker */}
