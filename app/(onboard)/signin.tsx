@@ -25,7 +25,7 @@ export default function Signin() {
                 {/* Header */}
                 <Text style={[globalStyles.title, { fontSize: 24 }]}>Welcome back</Text>
                 <Text style={[globalStyles.text]}>Enter your credentials to access your account</Text>
-                <View style={[globalStyles.spacer]} />
+                <View style={[globalStyles.spacer, { marginTop: 40 }]} />
 
                 {/* Credentials Input Field */}
                 <View>

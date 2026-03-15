@@ -5,7 +5,7 @@ import { supabase } from '@/src/services/supabase';
 import { globalStyles } from '@/src/styles/globalStyles';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Signup() {
@@ -161,7 +161,11 @@ export default function Signup() {
                     <View>
                         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
                             <Text style={[globalStyles.text, { color: '#B0B0B0' }]}>Already have an account? </Text>
-                            <Text style={[globalStyles.text, { color: '#146EF5', fontWeight: 'bold' }]}>Login</Text>
+                            <TouchableWithoutFeedback
+                                onPress={() => router.push('/(onboard)/signin')}
+                            >
+                                <Text style={[globalStyles.text, { color: '#146EF5', fontWeight: 'bold' }]}>Login</Text>
+                            </TouchableWithoutFeedback>
                         </View>
                     </View>
                 </View>
