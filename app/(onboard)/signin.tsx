@@ -1,13 +1,19 @@
 import CircleIcon from '@/src/components/circle_icon';
 import CustomButton from '@/src/components/custom_button';
 import CustomInputField from '@/src/components/custom_input_field';
+import { supabase } from '@/src/services/supabase';
 import { globalStyles } from '@/src/styles/globalStyles';
 import { router } from 'expo-router';
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Signin() {
+    const [user, setUser] = useState('');
+    const [pass, setPass] = useState('');
+
+    const handleUserChange = (text: string) => setUser(text);
+    const handlePassChange = (text: string) => setPass(text);
     return (
         <SafeAreaView
             style={[globalStyles.container, { flex: 1, paddingHorizontal: 20 }]}
@@ -25,7 +31,7 @@ export default function Signin() {
                 <View>
                     <Text style={[{ fontSize: 14 }]}>Email</Text>
                     <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, { alignItems: 'flex-start', width: '100%' }, { paddingVertical: 4, marginTop: 8 }]}>
-                        <CustomInputField placeholder="gymflow@gmail.com" placeholderColor='#B0B0B0' />
+                        <CustomInputField onChangeText={handleUserChange} value={user} placeholder="gymflow@gmail.com" placeholderColor='#B0B0B0' />
                     </View>
                 </View>
 
@@ -34,7 +40,8 @@ export default function Signin() {
                 <View>
                     <Text style={[{ fontSize: 14 }]}>Password</Text>
                     <View style={[globalStyles.blockContainer, globalStyles.wrapperPadding, { alignItems: 'flex-start', width: '100%' }, { paddingVertical: 4, marginTop: 8 }]}>
-                        <CustomInputField placeholder="*******" placeholderColor='#B0B0B0' />
+                        <CustomInputField onChangeText={handlePassChange} value={pass} placeholder="********" placeholderColor='#B0B0B0' />
+
                     </View>
                 </View>
 
@@ -53,7 +60,40 @@ export default function Signin() {
 
                 {/* Login */}
 
-                <CustomButton onPress={() => router.push('/(tabs)/home')} label='Login' backgroundColor='#146EF5' textColor='#fff' textSize={18} style={[{ marginTop: 40, borderWidth: 0, width: 350, alignItems: 'center' }]} />
+                <CustomButton
+                    //Credential Checker
+                    // onPress={() => console.log(user, pass)}
+
+                    // Sign in
+                    onPress={async () => {
+                        if (user.trim() && pass.trim()) {
+                            const { data, error } = await supabase.auth.signInWithPassword({
+                                email: user,
+                                password: pass,
+                            });
+
+                            if (error) {
+                                console.error("Login Error:", error.message);
+                            } else {
+                                console.log("Login Success! User ID:", data.user?.id);
+                                router.push('/(tabs)/home');
+                            }
+                        } else {
+                            console.warn("Please enter both email and password.");
+                        }
+                    }}
+
+                    //Sign Up
+                    // onPress={async () => {
+                    //     const { data, error } = await supabase.auth.signUp({
+                    //         email: "",
+                    //         password: "1234567",
+                    //     });
+
+                    //     console.log("DATA:", data);
+                    //     console.log("ERROR:", error);
+                    // }}
+                    label='Login' backgroundColor='#146EF5' textColor='#fff' textSize={18} style={[{ marginTop: 40, borderWidth: 0, width: 350, alignItems: 'center' }]} />
 
                 <View style={[globalStyles.spacer]} />
 
