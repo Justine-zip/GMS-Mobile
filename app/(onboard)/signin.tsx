@@ -83,16 +83,7 @@ export default function Signin() {
                         }
                     }}
 
-                    //Sign Up
-                    // onPress={async () => {
-                    //     const { data, error } = await supabase.auth.signUp({
-                    //         email: "",
-                    //         password: "1234567",
-                    //     });
 
-                    //     console.log("DATA:", data);
-                    //     console.log("ERROR:", error);
-                    // }}
                     label='Login' backgroundColor='#146EF5' textColor='#fff' textSize={18} style={[{ marginTop: 40, borderWidth: 0, width: 350, alignItems: 'center' }]} />
 
                 <View style={[globalStyles.spacer]} />
