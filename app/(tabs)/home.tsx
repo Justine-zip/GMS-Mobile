@@ -1,12 +1,16 @@
 import CustomHeader from "@/src/components/custom_header";
 import CustomInputField from '@/src/components/custom_input_field';
 import StatusCard from "@/src/components/status_card";
+import { revenueFilter } from "@/src/const/revenueFilter";
 import { screenWidth } from "@/src/const/screenWidth";
 import { memberGrowthData } from "@/src/data/member_growth";
+import { salesRevenueData } from "@/src/data/sales_revenue";
 import { globalStyles } from "@/src/styles/globalStyles";
+import { yAxisLabels } from "@/src/utils/y_label_formatter";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, Text, View } from "react-native";
 import CircularProgress from 'react-native-circular-progress-indicator';
+import { Dropdown } from "react-native-element-dropdown";
 import { BarChart, LineChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { trafficStaff } from '../../src/data/gym_traffic';
@@ -41,40 +45,6 @@ export default function Index() {
           <StatusCard iconSet="Ionicons" icon="person-add-outline" label="Active Members" value="54" plugin={false} status="mins" style={{ marginRight: 10 }}></StatusCard>
           <StatusCard iconSet="Ionicons" icon="person-outline" label="Days Remaining" value="7" plugin={true} status="Active"></StatusCard>
         </ScrollView>
-
-
-        {/* Workout Notification */}
-        {/* <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { width: '100%', height: 150, maxHeight: 150, backgroundColor: '#146EF5' }]}>
-          <View style={{ padding: 10 }}>
-            <Text style={[globalStyles.title, { color: '#fff', fontWeight: 'bold' }]}>Ready to workout?</Text>
-            <Text style={[globalStyles.text, { fontSize: 16, color: '#fff' }]}>Time in to begin your session.</Text>
-            <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperCenter, { width: '100%', height: 50, maxHeight: 50, backgroundColor: '#fff' }]}>
-              <Text style={[globalStyles.title, { fontSize: 16 }]}>Time In</Text>
-            </View>
-          </View>
-        </View> */}
-
-        {/* Subscription Notification */}
-        {/* <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { borderColor: '#ffaa0b4f', width: '100%', height: 150, maxHeight: 120, backgroundColor: '#ffaa0b1e' }]}>
-          <View style={{ padding: 10 }}>
-            <View style={{ flexDirection: 'row', gap: 10 }}>
-              <View style={{ flex: 5, flexDirection: 'column' }}>
-                <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold' }]}>Your membership will expire in 7 days!</Text>
-                <Text style={[globalStyles.text, { fontSize: 14, marginTop: 4 }]}>Don't loose access to your favorite branch</Text>
-              </View>
-              <TouchableOpacity style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperCenter, { borderWidth: 0, flex: 3, width: 80, height: 50, maxHeight: 50, backgroundColor: '#FFA90B' }]}>
-                <View>
-                  <Text style={[globalStyles.title, { fontSize: 16, color: '#fff' }]}>Renew Now</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-
-        <View style={[globalStyles.spacer]}><Text>YOUR STATS</Text></View> */}
-
-        {/* Attendanec History */}
-        {/* <View style={globalStyles.spacer}><AttendanceHistory /></View> */}
 
         {/* Member Growth  */}
         <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding,]}>
@@ -177,6 +147,65 @@ export default function Index() {
               barWidth={22}
               initialSpacing={16}
               spacing={12}
+              rulesType='solid'
+            ></BarChart>
+          </View>
+        </View>
+
+        {/* Sales Revenue */}
+        <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding,]}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold' }]}>Sales Revenue</Text>
+            <Dropdown
+              style={{
+                width: 120,
+                height: 36,
+                borderRadius: 6,
+                borderWidth: 1,
+                borderColor: "#e0e0e0",
+                paddingHorizontal: 10
+              }}
+              data={revenueFilter}
+              labelField="label"
+              valueField="values"
+              onChange={() => null}
+            />
+          </View>
+          <Text style={[globalStyles.text, { fontSize: 14, marginTop: 4 }]}>Revenue performance for the past 30 days</Text>
+          <View style={[, { padding: 10 }]}>
+            <BarChart data={salesRevenueData.value}
+              maxValue={15000}
+              xAxisLabelTexts={salesRevenueData.time}
+              noOfSections={3}
+              yAxisLabelWidth={25}
+              yAxisLabelPrefix="$"
+              yAxisLabelTexts={yAxisLabels}
+              renderTooltip={(item: any) => (
+                <View
+                  style={{
+                    backgroundColor: "#000000",
+                    paddingHorizontal: 12,
+                    paddingVertical: 8,
+                    borderRadius: 6,
+                  }}
+                >
+                  <Text style={{ fontSize: 10, color: '#fff' }}>
+                    Total: ${item.value}
+                  </Text>
+                </View>
+              )}
+              yAxisThickness={1}
+              yAxisTextStyle={{ fontSize: 10 }}
+              yAxisColor={'#e0e0e0'}
+              xAxisThickness={1}
+              xAxisLabelTextStyle={{ fontSize: 10 }}
+              xAxisColor={'#e0e0e0'}
+              barBorderTopRightRadius={4}
+              barBorderTopLeftRadius={4}
+              disableScroll={true}
+              barWidth={28}
+              initialSpacing={36}
+              spacing={40}
               rulesType='solid'
             ></BarChart>
           </View>
