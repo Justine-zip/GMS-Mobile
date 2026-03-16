@@ -1,13 +1,13 @@
-import AttendanceHistory from '@/src/components/attendance_history_chart';
-import CircleIcon from '@/src/components/circle_icon';
 import CustomHeader from "@/src/components/custom_header";
 import CustomInputField from '@/src/components/custom_input_field';
 import StatusCard from "@/src/components/status_card";
+import { screenWidth } from "@/src/const/screenWidth";
+import { memberGrowthData } from "@/src/data/member_growth";
 import { globalStyles } from "@/src/styles/globalStyles";
 import { Ionicons } from "@expo/vector-icons";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import CircularProgress from 'react-native-circular-progress-indicator';
-import { BarChart } from 'react-native-gifted-charts';
+import { BarChart, LineChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { traffic } from '../../src/data/gym_traffic';
 
@@ -31,48 +31,20 @@ export default function Index() {
 
         </View>
 
-        {/* Daily Tracker */}
-        <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { padding: 12, width: '100%', height: 150, maxHeight: 150 }]}>
-          <View style={{ flexDirection: 'row', gap: 4, padding: 6, }}>
-            <View style={[globalStyles.roundContainer, {
-              width: 50,
-              height: 50,
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginTop: 10
-            }]}>
-              <Image source={require('../../assets/images/main/UserPhoto.png')} style={{ width: '100%', height: '100%' }}
-                resizeMode="cover"></Image>
-            </View>
-            <View style={{ flex: 10, flexDirection: 'column', padding: 10 }}>
-              <Text style={[globalStyles.text]}>Welcome back, Emma!</Text>
-              <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold', marginTop: 6 }]}>You have a 3 days streak going.</Text>
-              <View style={[globalStyles.spacer, { flexDirection: 'row', gap: 8, }]}>
-                <CircleIcon backgroundcolor={'#f1f1f1'} iconColor="#fff" textColor={'#B0B0B0'} size={14} label={'Mon'} />
-                <CircleIcon backgroundcolor={'#f1f1f1'} iconColor="#fff" textColor={'#B0B0B0'} size={14} label={'Tue'} />
-                <CircleIcon name="checkmark" backgroundcolor={'#146EF5'} textColor={'#146EF5'} iconColor="#fff" size={14} label={'Wed'} />
-                <CircleIcon name="checkmark" backgroundcolor={'#146EF5'} textColor={'#146EF5'} iconColor="#fff" size={14} label={'Thur'} />
-                <CircleIcon name="checkmark" backgroundcolor={'#146EF5'} textColor={'#146EF5'} iconColor="#fff" size={14} label={'Fri'} />
-                <CircleIcon backgroundcolor={'#fff'} iconColor="#fff" textColor={'#B0B0B0'} size={14} label={'Sat'} />
-                <CircleIcon backgroundcolor={'#fff'} iconColor="#fff" textColor={'#B0B0B0'} size={14} label={'Sun'} />
-              </View>
-            </View>
-          </View>
-        </View>
-
         {/* Status Container */}
         <ScrollView
           showsHorizontalScrollIndicator={false}
           horizontal
           style={{ flexGrow: 0 }}
         >
-          <StatusCard iconSet="Ionicons" icon="calendar-clear-outline" label="Days Remaining" value="7" plugin={true} status="Active" style={{ marginRight: 10 }}></StatusCard>
-          <StatusCard iconSet="Entypo" icon="stopwatch" label="Avg Duration" value="54" plugin={false} status="mins" style={{ marginRight: 10 }}></StatusCard>
-          <StatusCard icon="calendar-clear-outline" label="Days Remaining" value="7" plugin={true} status="Active"></StatusCard>
+          <StatusCard iconSet="Ionicons" icon="person-outline" label="Total Members" value="184" plugin={true} status="Active" style={{ marginRight: 10 }}></StatusCard>
+          <StatusCard iconSet="Ionicons" icon="person-add-outline" label="Active Members" value="54" plugin={false} status="mins" style={{ marginRight: 10 }}></StatusCard>
+          <StatusCard iconSet="Ionicons" icon="person-outline" label="Days Remaining" value="7" plugin={true} status="Active"></StatusCard>
         </ScrollView>
 
+
         {/* Workout Notification */}
-        <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { width: '100%', height: 150, maxHeight: 150, backgroundColor: '#146EF5' }]}>
+        {/* <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { width: '100%', height: 150, maxHeight: 150, backgroundColor: '#146EF5' }]}>
           <View style={{ padding: 10 }}>
             <Text style={[globalStyles.title, { color: '#fff', fontWeight: 'bold' }]}>Ready to workout?</Text>
             <Text style={[globalStyles.text, { fontSize: 16, color: '#fff' }]}>Time in to begin your session.</Text>
@@ -80,10 +52,10 @@ export default function Index() {
               <Text style={[globalStyles.title, { fontSize: 16 }]}>Time In</Text>
             </View>
           </View>
-        </View>
+        </View> */}
 
         {/* Subscription Notification */}
-        <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { borderColor: '#ffaa0b4f', width: '100%', height: 150, maxHeight: 120, backgroundColor: '#ffaa0b1e' }]}>
+        {/* <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, { borderColor: '#ffaa0b4f', width: '100%', height: 150, maxHeight: 120, backgroundColor: '#ffaa0b1e' }]}>
           <View style={{ padding: 10 }}>
             <View style={{ flexDirection: 'row', gap: 10 }}>
               <View style={{ flex: 5, flexDirection: 'column' }}>
@@ -99,10 +71,41 @@ export default function Index() {
           </View>
         </View>
 
-        <View style={[globalStyles.spacer]}><Text>YOUR STATS</Text></View>
+        <View style={[globalStyles.spacer]}><Text>YOUR STATS</Text></View> */}
 
         {/* Attendanec History */}
-        <View style={globalStyles.spacer}><AttendanceHistory /></View>
+        {/* <View style={globalStyles.spacer}><AttendanceHistory /></View> */}
+
+        {/* Member Growth  */}
+        <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding,]}>
+          <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold' }]}>Member Growth</Text>
+          <Text style={[globalStyles.text, { fontSize: 14, marginTop: 4 }]}>Total active members over time</Text>
+          <View style={[, { padding: 10 }]}>
+            <LineChart
+              data={memberGrowthData}
+              color='#146EF5'
+              areaChart
+              startFillColor="#e4efff13"
+              endFillColor="#e4efff13"
+              maxValue={600}
+              noOfSections={4}
+              yAxisLabelWidth={25}
+              yAxisThickness={1}
+              yAxisTextStyle={{ fontSize: 10 }}
+              yAxisColor="#e0e0e0"
+              xAxisThickness={1}
+              xAxisLabelTextStyle={{ fontSize: 10 }}
+              xAxisColor="#e0e0e0"
+              hideRules
+              rulesType="solid"
+              initialSpacing={16}
+              width={screenWidth - 120}
+              spacing={50}
+              thickness={3}
+              hideDataPoints={true}
+            />
+          </View>
+        </View>
 
         {/* Membership Plan */}
         <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, {
