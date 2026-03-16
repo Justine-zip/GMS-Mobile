@@ -107,12 +107,12 @@ export default function Index() {
           </View>
         </View>
 
-        {/* Membership Plan */}
+        {/* Membership Overview */}
         <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding, {
           width: '100%', flex: 1,
         }]}>
-          <Text style={[globalStyles.title,]}>Membership Plan</Text>
-          <Text style={[globalStyles.text,]}>See how many days you've used and how many are left.</Text>
+          <Text style={[globalStyles.title,]}>Membership Overview</Text>
+          <Text style={[globalStyles.text,]}>Compares member losses and new sign-ups</Text>
 
           <View style={[globalStyles.spacer, { padding: 4 }]}>
             <View style={[{ flexDirection: 'row', justifyContent: 'space-between', gap: 10, alignItems: 'center' }]}>
@@ -138,16 +138,16 @@ export default function Index() {
                 <View style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}>
                   <View style={[globalStyles.roundContainer, { width: 15, height: 15, backgroundColor: '#146EF5' }]}></View>
                   <View>
-                    <Text style={[globalStyles.text, { fontSize: 12 }]}>Days Remaining</Text>
-                    <Text style={[globalStyles.title, { marginTop: 4, fontSize: 16, fontWeight: '500' }]}>7 Days</Text>
+                    <Text style={[globalStyles.text, { fontSize: 12 }]}>New Members</Text>
+                    <Text style={[globalStyles.title, { marginTop: 4, fontSize: 16, fontWeight: '500' }]}>156</Text>
                   </View>
                 </View>
                 <View style={[globalStyles.separator]}></View>
                 <View style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}>
                   <View style={[globalStyles.roundContainer, { width: 15, height: 15, backgroundColor: '#e0e0e0' }]}></View>
                   <View>
-                    <Text style={[globalStyles.text, { fontSize: 12 }]}>Days Used</Text>
-                    <Text style={[globalStyles.title, { marginTop: 4, fontSize: 16, fontWeight: '500' }]}>319 Days</Text>
+                    <Text style={[globalStyles.text, { fontSize: 12 }]}>Cancelled Members</Text>
+                    <Text style={[globalStyles.title, { marginTop: 4, fontSize: 16, fontWeight: '500' }]}>24</Text>
                   </View>
                 </View>
               </View>
