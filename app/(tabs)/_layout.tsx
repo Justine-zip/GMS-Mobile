@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Tabs } from "expo-router";
 import React from "react";
 
@@ -17,6 +17,14 @@ export default function RootLayout() {
       options={{
         title: 'Home',
         tabBarIcon: ({ color, size }) => <Ionicons name='home-outline' color={color} size={size} />
+      }}
+    />
+
+    <Tabs.Screen
+      name='member'
+      options={{
+        title: 'Member',
+        tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name='account-group-outline' color={color} size={size} />
       }}
     />
 
