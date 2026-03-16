@@ -9,7 +9,7 @@ import { ScrollView, Text, View } from "react-native";
 import CircularProgress from 'react-native-circular-progress-indicator';
 import { BarChart, LineChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { traffic } from '../../src/data/gym_traffic';
+import { trafficStaff } from '../../src/data/gym_traffic';
 
 
 export default function Index() {
@@ -155,14 +155,14 @@ export default function Index() {
           </View>
         </View>
 
-        {/* Gym Traffic */}
+        {/* Peak Hours */}
         <View style={[globalStyles.blockContainer, globalStyles.spacer, globalStyles.wrapperPadding,]}>
-          <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold' }]}>Gym Traffic</Text>
-          <Text style={[globalStyles.text, { fontSize: 14, marginTop: 4 }]}>Find the best time to work out based on activity.</Text>
+          <Text style={[globalStyles.text, { fontSize: 16, fontWeight: 'bold' }]}>Peak Hours</Text>
+          <Text style={[globalStyles.text, { fontSize: 14, marginTop: 4 }]}>Member activity throughout the day</Text>
           <View style={[, { padding: 10 }]}>
-            <BarChart data={traffic.value}
+            <BarChart data={trafficStaff.value}
               maxValue={60}
-              xAxisLabelTexts={traffic.time}
+              xAxisLabelTexts={trafficStaff.time}
               noOfSections={4}
               yAxisLabelWidth={25}
               yAxisThickness={1}
@@ -174,9 +174,9 @@ export default function Index() {
               barBorderTopRightRadius={4}
               barBorderTopLeftRadius={4}
               disableScroll={true}
-              barWidth={28}
+              barWidth={22}
               initialSpacing={16}
-              spacing={16}
+              spacing={12}
               rulesType='solid'
             ></BarChart>
           </View>
